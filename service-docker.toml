@@ -1,0 +1,20 @@
+[api]
+shutdown_timeout = "3s"
+http_api_addr = ":8761"
+event_listener_addr = ":8762"
+debug_mode = false
+
+[log]
+#level="info"
+level="debug"
+force_colors = true
+
+[token]
+ttl = "48h"
+secret = "supersecret"
+
+[db]
+addr = "pgdb:5432"
+user = "postgres"
+password = "postgres"
+database = "test"

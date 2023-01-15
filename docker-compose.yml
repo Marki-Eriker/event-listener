@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    build: .
+    depends_on:
+      - pgdb
+    ports:
+      - 8761:8761
+      - 8762:8762
+    restart: always
+  pgdb:
+    image: "postgres"
+    container_name: "my_postgres"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "test"
+    ports:
+      - 5432:5432
